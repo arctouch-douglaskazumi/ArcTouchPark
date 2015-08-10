@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{31E553BC-4ABE-4279-B426-1B15D74F71C7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ArcTouchPark.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+    <AssemblyName>ArcTouchPark.iOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <AssemblyName>ArcTouchPark.iOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>i386</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <AssemblyName>ArcTouchPark</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchProfiling>true</MtouchProfiling>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <AssemblyName>ArcTouchPark.iOS</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Calabash">
+      <HintPath>..\packages\Xamarin.TestCloud.Agent.0.13.0\lib\Xamarin.iOS10\Calabash.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Insights">
+      <HintPath>..\packages\Xamarin.Insights.1.10.5\lib\Xamarin.iOS10\Xamarin.Insights.dll</HintPath>
+    </Reference>
+    <Reference Include="PLCrashReporterUnifiedBinding">
+      <HintPath>..\packages\Xamarin.Insights.1.10.5\lib\Xamarin.iOS10\PLCrashReporterUnifiedBinding.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArcTouchPark\ArcTouchPark.csproj">
+      <Project>{5B837794-C448-431E-A15D-3AD9A386C6C1}</Project>
+      <Name>ArcTouchPark</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default.png" />
+    <BundleResource Include="Resources\Default%402x.png" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Default-Portrait.png" />
+    <BundleResource Include="Resources\Default-Portrait%402x.png" />
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\Icon-60%403x.png" />
+    <BundleResource Include="Resources\Icon-76.png" />
+    <BundleResource Include="Resources\Icon-76%402x.png" />
+    <BundleResource Include="Resources\Icon-Small.png" />
+    <BundleResource Include="Resources\Icon-Small%402x.png" />
+    <BundleResource Include="Resources\Icon-Small%403x.png" />
+    <BundleResource Include="Resources\Icon-Small-40.png" />
+    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
+    <BundleResource Include="Resources\Icon-Small-40%403x.png" />
+    <BundleResource Include="Resources\.DS_Store" />
+    <BundleResource Include="Resources\attachment.png" />
+    <BundleResource Include="Resources\attachment%402x.png" />
+    <BundleResource Include="Resources\attachment%403x.png" />
+    <BundleResource Include="Resources\bullet.png" />
+    <BundleResource Include="Resources\bullet%402x.png" />
+    <BundleResource Include="Resources\bullet%403x.png" />
+    <BundleResource Include="Resources\disclosure_chevron.png" />
+    <BundleResource Include="Resources\disclosure_chevron%402x.png" />
+    <BundleResource Include="Resources\disclosure_chevron%403x.png" />
+    <BundleResource Include="Resources\doc_category_construction_lg.png" />
+    <BundleResource Include="Resources\doc_category_construction_lg%402x.png" />
+    <BundleResource Include="Resources\doc_category_construction_lg%403x.png" />
+    <BundleResource Include="Resources\doc_category_construction_sm.png" />
+    <BundleResource Include="Resources\doc_category_construction_sm%402x.png" />
+    <BundleResource Include="Resources\doc_category_construction_sm%403x.png" />
+    <BundleResource Include="Resources\doc_category_favorites_lg.png" />
+    <BundleResource Include="Resources\doc_category_favorites_lg%402x.png" />
+    <BundleResource Include="Resources\doc_category_favorites_lg%403x.png" />
+    <BundleResource Include="Resources\doc_category_favorites_sm.png" />
+    <BundleResource Include="Resources\doc_category_favorites_sm%402x.png" />
+    <BundleResource Include="Resources\doc_category_favorites_sm%403x.png" />
+    <BundleResource Include="Resources\doc_category_handbook_lg.png" />
+    <BundleResource Include="Resources\doc_category_handbook_lg%402x.png" />
+    <BundleResource Include="Resources\doc_category_handbook_lg%403x.png" />
+    <BundleResource Include="Resources\doc_category_handbook_sm.png" />
+    <BundleResource Include="Resources\doc_category_handbook_sm%402x.png" />
+    <BundleResource Include="Resources\doc_category_handbook_sm%403x.png" />
+    <BundleResource Include="Resources\doc_category_hoa_lg.png" />
+    <BundleResource Include="Resources\doc_category_hoa_lg%402x.png" />
+    <BundleResource Include="Resources\doc_category_hoa_lg%403x.png" />
+    <BundleResource Include="Resources\doc_category_hoa_sm.png" />
+    <BundleResource Include="Resources\doc_category_hoa_sm%402x.png" />
+    <BundleResource Include="Resources\doc_category_hoa_sm%403x.png" />
+    <BundleResource Include="Resources\doc_category_lennar_care_lg.png" />
+    <BundleResource Include="Resources\doc_category_lennar_care_lg%402x.png" />
+    <BundleResource Include="Resources\doc_category_lennar_care_lg%403x.png" />
+    <BundleResource Include="Resources\doc_category_lennar_care_sm.png" />
+    <BundleResource Include="Resources\doc_category_lennar_care_sm%402x.png" />
+    <BundleResource Include="Resources\doc_category_lennar_care_sm%403x.png" />
+    <BundleResource Include="Resources\doc_category_mortgage_lg.png" />
+    <BundleResource Include="Resources\doc_category_mortgage_lg%402x.png" />
+    <BundleResource Include="Resources\doc_category_mortgage_lg%403x.png" />
+    <BundleResource Include="Resources\doc_category_mortgage_sm.png" />
+    <BundleResource Include="Resources\doc_category_mortgage_sm%402x.png" />
+    <BundleResource Include="Resources\doc_category_mortgage_sm%403x.png" />
+    <BundleResource Include="Resources\doc_category_other_lg.png" />
+    <BundleResource Include="Resources\doc_category_other_lg%402x.png" />
+    <BundleResource Include="Resources\doc_category_other_lg%403x.png" />
+    <BundleResource Include="Resources\doc_category_other_sm.png" />
+    <BundleResource Include="Resources\doc_category_other_sm%402x.png" />
+    <BundleResource Include="Resources\doc_category_other_sm%403x.png" />
+    <BundleResource Include="Resources\doc_category_purchase_lg.png" />
+    <BundleResource Include="Resources\doc_category_purchase_lg%402x.png" />
+    <BundleResource Include="Resources\doc_category_purchase_lg%403x.png" />
+    <BundleResource Include="Resources\doc_category_purchase_sm.png" />
+    <BundleResource Include="Resources\doc_category_purchase_sm%402x.png" />
+    <BundleResource Include="Resources\doc_category_purchase_sm%403x.png" />
+    <BundleResource Include="Resources\doc_category_service_request_lg.png" />
+    <BundleResource Include="Resources\doc_category_service_request_lg%402x.png" />
+    <BundleResource Include="Resources\doc_category_service_request_lg%403x.png" />
+    <BundleResource Include="Resources\doc_category_service_request_sm.png" />
+    <BundleResource Include="Resources\doc_category_service_request_sm%402x.png" />
+    <BundleResource Include="Resources\doc_category_service_request_sm%403x.png" />
+    <BundleResource Include="Resources\doc_category_spec_sm.png" />
+    <BundleResource Include="Resources\doc_category_spec_sm%402x.png" />
+    <BundleResource Include="Resources\doc_category_spec_sm%403x.png" />
+    <BundleResource Include="Resources\doc_category_title_lg.png" />
+    <BundleResource Include="Resources\doc_category_title_lg%402x.png" />
+    <BundleResource Include="Resources\doc_category_title_lg%403x.png" />
+    <BundleResource Include="Resources\doc_category_title_sm.png" />
+    <BundleResource Include="Resources\doc_category_title_sm%402x.png" />
+    <BundleResource Include="Resources\doc_category_title_sm%403x.png" />
+    <BundleResource Include="Resources\doc_category_warranty_lg.png" />
+    <BundleResource Include="Resources\doc_category_warranty_lg%402x.png" />
+    <BundleResource Include="Resources\doc_category_warranty_lg%403x.png" />
+    <BundleResource Include="Resources\doc_category_warranty_sm.png" />
+    <BundleResource Include="Resources\doc_category_warranty_sm%402x.png" />
+    <BundleResource Include="Resources\doc_category_warranty_sm%403x.png" />
+    <BundleResource Include="Resources\document_lg.png" />
+    <BundleResource Include="Resources\document_lg%402x.png" />
+    <BundleResource Include="Resources\document_lg%403x.png" />
+    <BundleResource Include="Resources\documents_group_lg.png" />
+    <BundleResource Include="Resources\documents_group_lg%402x.png" />
+    <BundleResource Include="Resources\documents_group_lg%403x.png" />
+    <BundleResource Include="Resources\dot_indicator.png" />
+    <BundleResource Include="Resources\dot_indicator%402x.png" />
+    <BundleResource Include="Resources\dot_indicator%403x.png" />
+    <BundleResource Include="Resources\dot_indicator_active.png" />
+    <BundleResource Include="Resources\dot_indicator_active%402x.png" />
+    <BundleResource Include="Resources\dot_indicator_active%403x.png" />
+    <BundleResource Include="Resources\favorite.png" />
+    <BundleResource Include="Resources\favorite%402x.png" />
+    <BundleResource Include="Resources\favorite%403x.png" />
+    <BundleResource Include="Resources\favorite_navbar.png" />
+    <BundleResource Include="Resources\favorite_navbar%402x.png" />
+    <BundleResource Include="Resources\favorite_navbar%403x.png" />
+    <BundleResource Include="Resources\favorited.png" />
+    <BundleResource Include="Resources\favorited%402x.png" />
+    <BundleResource Include="Resources\favorited%403x.png" />
+    <BundleResource Include="Resources\favorited_navbar.png" />
+    <BundleResource Include="Resources\favorited_navbar%402x.png" />
+    <BundleResource Include="Resources\favorited_navbar%403x.png" />
+    <BundleResource Include="Resources\forward_circle_arrow.png" />
+    <BundleResource Include="Resources\forward_circle_arrow%402x.png" />
+    <BundleResource Include="Resources\forward_circle_arrow%403x.png" />
+    <BundleResource Include="Resources\info_i.png" />
+    <BundleResource Include="Resources\info_i%402x.png" />
+    <BundleResource Include="Resources\info_i%403x.png" />
+    <BundleResource Include="Resources\line_pattern.png" />
+    <BundleResource Include="Resources\line_pattern%402x.png" />
+    <BundleResource Include="Resources\line_pattern%403x.png" />
+    <BundleResource Include="Resources\login_bg.png" />
+    <BundleResource Include="Resources\login_bg%402x.png" />
+    <BundleResource Include="Resources\login_bg%403x.png" />
+    <BundleResource Include="Resources\menu.png" />
+    <BundleResource Include="Resources\menu%402x.png" />
+    <BundleResource Include="Resources\menu%403x.png" />
+    <BundleResource Include="Resources\menu_circle_mask.png" />
+    <BundleResource Include="Resources\menu_circle_mask%402x.png" />
+    <BundleResource Include="Resources\menu_circle_mask%403x.png" />
+    <BundleResource Include="Resources\menu_lennar_logo.png" />
+    <BundleResource Include="Resources\menu_lennar_logo%402x.png" />
+    <BundleResource Include="Resources\menu_lennar_logo%403x.png" />
+    <BundleResource Include="Resources\no_image%403x.png" />
+    <BundleResource Include="Resources\right_chevron.png" />
+    <BundleResource Include="Resources\right_chevron%402x.png" />
+    <BundleResource Include="Resources\right_chevron%403x.png" />
+    <BundleResource Include="Resources\share.png" />
+    <BundleResource Include="Resources\share%402x.png" />
+    <BundleResource Include="Resources\share%403x.png" />
+    <BundleResource Include="Resources\fonts\Gotham-Book.ttf" />
+    <BundleResource Include="Resources\fonts\Gotham-Medium.ttf" />
+    <BundleResource Include="Resources\fonts\SohoGothicPro-Bold.otf" />
+    <BundleResource Include="Resources\fonts\SohoGothicPro-Light.otf" />
+    <BundleResource Include="Resources\fonts\SohoGothicPro-Medium.otf" />
+    <BundleResource Include="Resources\fonts\SohoGothicPro-Regular.otf" />
+    <BundleResource Include="Resources\fonts\SohoStd-Medium.otf" />
+    <BundleResource Include="Resources\fonts\SohoStd-Regular.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Implementations\Preferences.cs" />
+    <Compile Include="Implementations\Environment.cs" />
+    <Compile Include="Util\Reachability.cs" />
+    <Compile Include="Implementations\Logging.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="ITunesArtwork" />
+    <ITunesArtwork Include="ITunesArtwork%402x" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Insights.1.10.5\build\Xamarin.iOS10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.10.5\build\Xamarin.iOS10\Xamarin.Insights.targets')" />
+  <ItemGroup>
+    <Folder Include="Implementations\" />
+    <Folder Include="Util\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-568h%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-667h%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-736h%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-Landscape.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-Landscape%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default%402x.png" />
+  </ItemGroup>
+</Project>

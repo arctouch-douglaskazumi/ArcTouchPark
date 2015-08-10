@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{F8713C8C-7EF1-4948-A038-CE7D241EE87D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ArcTouchPark.Droid</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AssemblyName>ArcTouchPark.Droid</AssemblyName>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.21.0.3.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.Android">
+      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsViewGroup">
+      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Insights">
+      <HintPath>..\packages\Xamarin.Insights.1.10.5\lib\MonoAndroid10\Xamarin.Insights.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Implementations\Preferences.cs" />
+    <Compile Include="Implementations\Environment.cs" />
+    <Compile Include="Implementations\Logging.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\layout\" />
+    <Folder Include="Resources\values\" />
+    <Folder Include="Implementations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\menu_lennar_logo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\menu_lennar_logo.png" />
+    <AndroidResource Include="Resources\drawable\menu_lennar_logo.png" />
+    <AndroidResource Include="Resources\drawable\menu_circle_mask.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\menu_circle_mask.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\menu_circle_mask.png" />
+    <AndroidResource Include="Resources\drawable\attachment.png" />
+    <AndroidResource Include="Resources\drawable\bullet.png" />
+    <AndroidResource Include="Resources\drawable\disclosure_chevron.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_construction_lg.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_construction_sm.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_favorites_lg.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_favorites_sm.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_handbook_lg.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_handbook_sm.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_hoa_lg.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_hoa_sm.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_lennar_care_lg.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_lennar_care_sm.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_mortgage_lg.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_mortgage_sm.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_other_lg.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_purchase_lg.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_purchase_sm.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_service_request_lg.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_service_request_sm.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_spec_sm.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_title_lg.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_title_sm.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_warranty_lg.png" />
+    <AndroidResource Include="Resources\drawable\doc_category_warranty_sm.png" />
+    <AndroidResource Include="Resources\drawable\document_lg.png" />
+    <AndroidResource Include="Resources\drawable\documents_group_lg.png" />
+    <AndroidResource Include="Resources\drawable\dot_indicator.png" />
+    <AndroidResource Include="Resources\drawable\dot_indicator_active.png" />
+    <AndroidResource Include="Resources\drawable\favorite.png" />
+    <AndroidResource Include="Resources\drawable\favorite_navbar.png" />
+    <AndroidResource Include="Resources\drawable\favorited.png" />
+    <AndroidResource Include="Resources\drawable\favorited_navbar.png" />
+    <AndroidResource Include="Resources\drawable\forward_circle_arrow.png" />
+    <AndroidResource Include="Resources\drawable\info_i.png" />
+    <AndroidResource Include="Resources\drawable\line_pattern.png" />
+    <AndroidResource Include="Resources\drawable\login_bg.png" />
+    <AndroidResource Include="Resources\drawable\menu.png" />
+    <AndroidResource Include="Resources\drawable\right_chevron.png" />
+    <AndroidResource Include="Resources\drawable\share.png" />
+    <AndroidResource Include="Resources\drawable\splash_drawable.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\attachment.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bullet.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\disclosure_chevron.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_construction_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_construction_sm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_favorites_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_favorites_sm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_handbook_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_handbook_sm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_hoa_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_hoa_sm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_lennar_care_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_lennar_care_sm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_mortgage_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_mortgage_sm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_other_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_other_sm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_purchase_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_purchase_sm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_service_request_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_service_request_sm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_spec_sm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_title_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_title_sm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_warranty_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\doc_category_warranty_sm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\document_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\documents_group_lg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\dot_indicator.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\dot_indicator_active.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\favorite.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\favorite_navbar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\favorited.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\favorited_navbar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\forward_circle_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\info_i.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\line_pattern.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\login_bg.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\menu.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\right_chevron.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\share.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\attachment.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bullet.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\disclosure_chevron.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_construction_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_construction_sm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_favorites_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_favorites_sm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_handbook_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_handbook_sm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_hoa_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_hoa_sm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_lennar_care_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_lennar_care_sm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_mortgage_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_mortgage_sm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_other_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_other_sm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_purchase_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_purchase_sm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_service_request_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_service_request_sm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_spec_sm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_title_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_title_sm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_warranty_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\doc_category_warranty_sm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\document_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\documents_group_lg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\dot_indicator.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\dot_indicator_active.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\favorite.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\favorite_navbar.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\favorited.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\favorited_navbar.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\forward_circle_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\info_i.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\line_pattern.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\login_bg.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\menu.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\no_image.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\right_chevron.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\splash.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Insights.1.10.5\build\MonoAndroid10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.10.5\build\MonoAndroid10\Xamarin.Insights.targets')" />
+  <ItemGroup>
+    <ProjectReference Include="..\ArcTouchPark\ArcTouchPark.csproj">
+      <Project>{5B837794-C448-431E-A15D-3AD9A386C6C1}</Project>
+      <Name>ArcTouchPark</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
