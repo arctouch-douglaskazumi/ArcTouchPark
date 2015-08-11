@@ -2,7 +2,6 @@
 using System.Windows.Input;
 using Xamarin.Forms;
 
-using XParse;
 using System.Collections.Generic;
 
 namespace ArcTouchPark
@@ -77,17 +76,8 @@ namespace ArcTouchPark
 
 		private async void LogoutNotHere ()
 		{
-//			var wrongPlaceMessage = Localization.GetString ("LogoutNotHere") + selectedDate.ToString ();
-//			await App.DisplayAlertAsync (wrongPlaceMessage);
-
-			Abdication obj = new Abdication ();
-			obj.Username = "outro";
-			obj.SelectedDate = DateTime.Now;
-
-			await XParseApi.SaveAsync (obj);
-
-			Abdication primeiro = await XParseApi.GetAsync<Abdication> ("LO2RbrZfh5");
-			List<Abdication> todos = await XParseApi.GetAllAsync<Abdication> ();
+			var wrongPlaceMessage = Localization.GetString ("LogoutNotHere");
+			await App.DisplayAlertAsync (wrongPlaceMessage);
 		}
 
 		#endregion

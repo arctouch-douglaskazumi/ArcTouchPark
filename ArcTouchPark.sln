@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcTouchPark.Droid", "Droid
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcTouchPark.UITests", "UITests\ArcTouchPark.UITests.csproj", "{B75525A1-C9E0-4EC5-8CE6-ACD77892E69F}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "XParse", "XParse\XParse.shproj", "{0814EB1A-91BA-4184-850D-07C3800579D6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -55,8 +55,9 @@
     </Compile>
     <Compile Include="Behaviors\EntryMaxLengthBehavior.cs" />
     <Compile Include="Models\Abdication.cs" />
+    <Compile Include="Models\Parseable.cs" />
+    <Compile Include="Api\XParseApi.cs" />
   </ItemGroup>
-  <Import Project="..\XParse\XParse.projitems" Label="Shared" Condition="Exists('..\XParse\XParse.projitems')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup>
@@ -69,8 +70,8 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Parse.Android">
-      <HintPath>..\..\..\Downloads\Parse-1.5.4\Parse.Android\Parse.Android.dll</HintPath>
+    <Reference Include="Parse.iOS">
+      <HintPath>..\Components\parse-1.5.4\lib\ios-unified\Parse.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
