@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Parse;
 using UIKit;
 
 namespace ArcTouchPark.iOS
@@ -14,9 +15,11 @@ namespace ArcTouchPark.iOS
 		{
 			global::Xamarin.Forms.Forms.Init ();
 
+			ParseClient.Initialize ("J3GQLW4v92nutNykkMdjap0mAuaRlsmZG0QOIB5G", "lmE3U3b5W09XUegOU4aYoNTsq71gXekiFTmwaoIR");
+
 			// Code for starting up the Xamarin Test Cloud Agent
 			#if ENABLE_TEST_CLOUD
-			Xamarin.Calabash.Start();
+			Xamarin.Calabash.Start ();
 			#endif
 
 			LoadApplication (new App ());
