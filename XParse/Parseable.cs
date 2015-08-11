@@ -4,7 +4,7 @@ using System.Linq;
 using Parse;
 using System.Reflection;
 
-namespace ArcTouchPark
+namespace XParse
 {
 	public class Parseable
 	{
@@ -31,6 +31,7 @@ namespace ArcTouchPark
 
 		public void LoadFromParse (ParseObject parseObj)
 		{
+			
 			var thisType = this.GetType ();
 
 			foreach (PropertyInfo prop in thisType.GetRuntimeProperties ()) {

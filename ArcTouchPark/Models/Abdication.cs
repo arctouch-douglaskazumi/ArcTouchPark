@@ -1,5 +1,7 @@
 ﻿using System;
 
+using XParse;
+
 namespace ArcTouchPark
 {
 	public class Abdication : Parseable

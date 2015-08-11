@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Input;
 using Xamarin.Forms;
-using Parse;
+
+using XParse;
+using System.Collections.Generic;
 
 namespace ArcTouchPark
 {
@@ -77,15 +79,15 @@ namespace ArcTouchPark
 		{
 //			var wrongPlaceMessage = Localization.GetString ("LogoutNotHere") + selectedDate.ToString ();
 //			await App.DisplayAlertAsync (wrongPlaceMessage);
-			var obj = new Abdication ();
-			obj.Username = "kazumi";
+
+			Abdication obj = new Abdication ();
+			obj.Username = "outro";
 			obj.SelectedDate = DateTime.Now;
-			await obj.ToParse ().SaveAsync ();
 
-			ParseObject sameObj = await ParseObject.GetQuery ("Abdication").FirstOrDefaultAsync ();
-			Abdication adbObj = new Abdication ();
-			adbObj.LoadFromParse (sameObj);
+			await XParseApi.SaveAsync (obj);
 
+			Abdication primeiro = await XParseApi.GetAsync<Abdication> ("LO2RbrZfh5");
+			List<Abdication> todos = await XParseApi.GetAllAsync<Abdication> ();
 		}
 
 		#endregion
