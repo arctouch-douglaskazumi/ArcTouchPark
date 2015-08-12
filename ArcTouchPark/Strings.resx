@@ -40,4 +40,10 @@
 	<data name="WontUse">
 		<value>{0} won't use the designated parking spot.</value>
 	</data>	
+	<data name="SuccessfullAbdication">
+		<value>You've successfully abdicated to your parking spot.</value>
+	</data>	
+	<data name="OopsSomethingWrong">
+		<value>Oops something wrong happened.</value>
+	</data>	
 </root>

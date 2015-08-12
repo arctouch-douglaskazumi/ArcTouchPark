@@ -25,7 +25,7 @@
 			Text="{x:Static ext:Strings.IWontUse}"
 			Command="{Binding WontUseCommand}"
 			/>
-			<DatePicker Date="{Binding SelectedDate}"/>
+			<DatePicker Date="{Binding SelectedDate}" HeightRequest="50"/>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

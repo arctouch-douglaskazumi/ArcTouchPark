@@ -67,9 +67,17 @@ namespace ArcTouchPark
 
 		private async void WontUse ()
 		{
-			string username = await Api.GetLoggedUserAsync ();
-			string message = Localization.GetString ("WontUse");
-			await App.DisplayAlertAsync (String.Format (message, username));
+			string message = Localization.GetString ("SuccessfullAbdication");
+			try {
+				Abdication abdication = new Abdication ();
+				abdication.Username = Username;
+				abdication.SelectedDate = SelectedDate;
+				await ParseApi.SaveAsync (abdication);
+			} catch (Exception e) {
+				message = Localization.GetString ("OopsSomethingWrong");
+			}
+
+			await App.DisplayAlertAsync (message);
 		}
 
 		public ICommand LogoutNotHereCommand { get; private set; }

@@ -1,0 +1,16 @@
+﻿<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:ext="clr-namespace:ArcTouchPark;assembly=ArcTouchPark"
+    x:Class="ArcTouchPark.App">
+    <Application.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Button">
+				<Setter Property="BackgroundColor" Value="{x:Static ext:VisualDesign.PRIMARY_BUTTON_BACKGROUND_COLOR}"/>
+				<Setter Property="TextColor" Value="{x:Static ext:VisualDesign.PRIMARY_BUTTON_TEXT_COLOR}"/>
+				<Setter Property="FontSize" Value="{x:Static ext:VisualDesign.PRIMARY_BUTTON_FONT_SIZE}"/>
+				<Setter Property="FontFamily" Value="{x:Static ext:VisualDesign.PRIMARY_BUTTON_FONT_FAMILY}"/>
+			</Style>
+		</ResourceDictionary>
+    </Application.Resources>
+</Application>

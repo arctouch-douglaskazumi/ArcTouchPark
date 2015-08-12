@@ -22,7 +22,6 @@
 				Placeholder="{x:Static ext:Strings.LoginPlaceholder}"
 				Text="{Binding Username}"
 				VerticalOptions="Center"
-
 				HorizontalOptions="FillAndExpand">
 				<Entry.Behaviors>
 					<ext:EntryMaxLengthBehavior MaxLength="10" />

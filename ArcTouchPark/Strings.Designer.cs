@@ -65,6 +65,12 @@ namespace ArcTouchPark {
             }
         }
         
+        internal static string OopsSomethingWrong {
+            get {
+                return ResourceManager.GetString("OopsSomethingWrong", resourceCulture);
+            }
+        }
+        
         internal static string OK {
             get {
                 return ResourceManager.GetString("OK", resourceCulture);
@@ -86,6 +92,12 @@ namespace ArcTouchPark {
         internal static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        internal static string SuccessfullAbdication {
+            get {
+                return ResourceManager.GetString("SuccessfullAbdication", resourceCulture);
             }
         }
         

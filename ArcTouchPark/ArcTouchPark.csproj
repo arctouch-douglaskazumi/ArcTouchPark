@@ -40,23 +40,21 @@
     <Compile Include="Interfaces\IEnvironment.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="Views\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\SideMenuPage.cs" />
     <Compile Include="Util\Localization.cs" />
-    <Compile Include="App.cs" />
     <Compile Include="Design\VisualDesign.cs" />
     <Compile Include="Design\VisualDesignExtension.cs" />
     <Compile Include="Api\Api.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
-    <Compile Include="Views\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Behaviors\EntryMaxLengthBehavior.cs" />
     <Compile Include="Models\Abdication.cs" />
     <Compile Include="Models\Parseable.cs" />
-    <Compile Include="Api\XParseApi.cs" />
+    <Compile Include="Api\ParseApi.cs" />
+    <Compile Include="Pages\MainPage.xaml.cs" />
+    <Compile Include="Pages\LoginPage.xaml.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
@@ -98,6 +96,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -6,9 +6,9 @@ using System.Collections.Generic;
 
 namespace ArcTouchPark
 {
-	public class XParseApi
+	public class ParseApi
 	{
-		public XParseApi ()
+		public ParseApi ()
 		{
 		}
 

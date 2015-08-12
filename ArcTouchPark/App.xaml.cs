@@ -1,12 +1,16 @@
 ﻿using System;
+using System;
 
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Net;
+using System.Collections.Generic;
+
+using Xamarin.Forms;
 
 namespace ArcTouchPark
 {
-	public class App : Application
+	public partial class App : Application
 	{
 		public ILogging Logging { get; private set; }
 
@@ -18,6 +22,7 @@ namespace ArcTouchPark
 
 		public App ()
 		{
+			InitializeComponent ();
 			Localization = new Localization ();
 			Preferences = DependencyService.Get<IPreferences> ();
 

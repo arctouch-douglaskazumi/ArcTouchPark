@@ -19,7 +19,10 @@ namespace ArcTouchPark
 		public NavPage ()
 		{
 			this.sideMenuPage = new SideMenuPage ();
-			this.navPage = new NavigationPage (new MainPage ());
+			this.navPage = new NavigationPage (new MainPage ()) {
+				BarBackgroundColor = VisualDesign.BACKGROUND_COLOR,
+				BarTextColor = VisualDesign.BRAND_COLOR
+			};
 
 			Master = sideMenuPage;
 			Detail = navPage;
