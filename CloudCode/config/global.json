@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.5.0"
+  },
+  "applications": {
+    "ArcTouchPark": {
+      "applicationId": "J3GQLW4v92nutNykkMdjap0mAuaRlsmZG0QOIB5G",
+      "masterKey": "ryvMoe9psM2iVwGTP1xCxAcaysCgl3YTIvfMedBA"
+    },
+    "_default": {
+      "link": "ArcTouchPark"
+    }
+  }
+}
