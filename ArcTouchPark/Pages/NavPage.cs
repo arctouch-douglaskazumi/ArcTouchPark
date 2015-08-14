@@ -18,6 +18,8 @@ namespace ArcTouchPark
 
 		public NavPage ()
 		{
+			MasterBehavior = MasterBehavior.Default;
+
 			this.sideMenuPage = new SideMenuPage ();
 			this.navPage = new NavigationPage (new MainPage ()) {
 				BarBackgroundColor = VisualDesign.BACKGROUND_COLOR,
@@ -26,6 +28,7 @@ namespace ArcTouchPark
 
 			Master = sideMenuPage;
 			Detail = navPage;
+
 		}
 
 		#region Navigation

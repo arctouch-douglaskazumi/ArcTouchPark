@@ -12,7 +12,7 @@ namespace ArcTouchPark
 		{
 		}
 
-		public string ObjectId {
+		public string objectId {
 			get;
 			set;
 		}
@@ -23,7 +23,13 @@ namespace ArcTouchPark
 			ParseObject parseObj = new ParseObject (thisType.Name);
 
 			foreach (PropertyInfo prop in thisType.GetRuntimeProperties ()) {
-				parseObj [prop.Name] = prop.GetValue (this);
+				if (!prop.Name.Equals ("ObjectId", StringComparison.OrdinalIgnoreCase)) {
+					parseObj [prop.Name] = prop.GetValue (this);
+				}
+			}
+
+			if (!string.IsNullOrWhiteSpace (this.objectId)) {
+				parseObj.ObjectId = this.objectId;
 			}
 
 			return parseObj;
@@ -35,12 +41,12 @@ namespace ArcTouchPark
 			var thisType = this.GetType ();
 
 			foreach (PropertyInfo prop in thisType.GetRuntimeProperties ()) {
-				if (prop.Name != "ObjectId") {
+				if (!prop.Name.Equals ("ObjectId", StringComparison.OrdinalIgnoreCase)) {
 					prop.SetValue (this, parseObj.Get<object> (prop.Name));
 				}
 			}
 
-			this.ObjectId = parseObj.ObjectId;
+			this.objectId = parseObj.ObjectId;
 		}
 	}
 }

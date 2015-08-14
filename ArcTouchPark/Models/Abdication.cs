@@ -18,6 +18,11 @@ namespace ArcTouchPark
 			get;
 			set;
 		}
+
+		public string ReplacedByUsername {
+			get;
+			set;
+		}
 	}
 }
 

@@ -74,6 +74,7 @@
     <Compile Include="Implementations\Preferences.cs" />
     <Compile Include="Implementations\Environment.cs" />
     <Compile Include="Implementations\Logging.cs" />
+    <Compile Include="ParseApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

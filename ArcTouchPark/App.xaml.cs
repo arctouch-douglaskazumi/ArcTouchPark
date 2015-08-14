@@ -1,12 +1,9 @@
 ﻿using System;
-using System;
 
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Net;
 using System.Collections.Generic;
-
-using Xamarin.Forms;
 
 namespace ArcTouchPark
 {
@@ -88,6 +85,12 @@ namespace ArcTouchPark
 				return app.Environment.IsInternetAvailable;
 			} 
 		}
+
+		public static async Task PushReceiver ()
+		{
+			await DisplayAlertAsync ("message");
+		}
+
 
 		#endregion
 	}
