@@ -35,12 +35,12 @@ namespace ArcTouchPark
 			return default(T);
 		}
 
-		public static async Task<List<T>> GetAllAsync<T> () where T: Parseable
+		public static async Task<List<T>> GetAllAsync<T> (int limit = 1000) where T: Parseable
 		{
 			Type objectType = typeof(T);
 			List<T> objList = new List<T> ();
 
-			var query = ParseObject.GetQuery (objectType.Name);
+			var query = ParseObject.GetQuery (objectType.Name).Limit (limit);
 			var parseObjectList = await query.FindAsync ();
 			foreach (var parseObject in parseObjectList) {
 				var obj = (T)Activator.CreateInstance (objectType);

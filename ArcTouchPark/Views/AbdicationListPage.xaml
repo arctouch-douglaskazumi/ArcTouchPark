@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ArcTouchPark.AbdicationListPage">
+	<Grid VerticalOptions="FillAndExpand"
+		HorizontalOptions="FillAndExpand">
+		<ListView x:Name="AbdicationListView" ItemsSource="{Binding AbdicationList}"
+			GroupDisplayBinding="{Binding GroupName}"
+			GroupShortNameBinding = "{Binding GroupName}"
+			IsGroupingEnabled = "true" >
+			<ListView.ItemTemplate>
+			  <DataTemplate>
+			    <TextCell Text="{Binding Username}" 
+			    	Detail="{Binding ReplacedByUsername}" />
+			  </DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		<ContentView BackgroundColor="Black" 
+			Opacity="0.5" 
+			IsVisible="{Binding IsRunning}" >
+			<ActivityIndicator IsRunning="true" />
+		</ContentView>
+	</Grid>
+</ContentPage>

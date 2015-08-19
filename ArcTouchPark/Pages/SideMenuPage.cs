@@ -128,8 +128,10 @@ namespace ArcTouchPark
 		None = 0,
 		[LocalizationKey ("Home"), Page (typeof(MainPage))]
 		Home = 1,
+		[LocalizationKey ("List"), Page (typeof(AbdicationListPage))]
+		List = 2,
 		[LocalizationKey ("Logout"), Page (typeof(MainPage))]
-		Logout = 2
+		Logout = 3
 	}
 
 	public class PageAttribute : Attribute

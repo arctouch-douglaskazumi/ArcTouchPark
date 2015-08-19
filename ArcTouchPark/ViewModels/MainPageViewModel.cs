@@ -94,7 +94,7 @@ namespace ArcTouchPark
 
 		#endregion
 
-		public async Task NotificationClicked (string objectId)
+		public async Task NotificationClickedAsync (string objectId)
 		{
 			IsRunning = true;
 			try {
@@ -104,7 +104,7 @@ namespace ArcTouchPark
 				if (onlyInfo)
 					return;
 
-				var formattedMessage = string.Format (Strings.WantToGetSpot, abdication.Username, abdication.SelectedDate.ToString ("d"));
+				var formattedMessage = string.Format (Strings.WantToGetSpot, abdication.Username, abdication.SelectedDate.ToString (Const.DATE_FORMAT));
 				bool getSpot = await App.DisplayYesNoDialogAsync (formattedMessage);
 
 				if (getSpot) {

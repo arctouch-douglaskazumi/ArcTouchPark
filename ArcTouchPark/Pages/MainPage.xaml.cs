@@ -44,7 +44,7 @@ namespace ArcTouchPark
 
 		private void NotificationReceived (object sender, string objectId)
 		{
-			mainPageViewModel.NotificationClicked (objectId);
+			mainPageViewModel.NotificationClickedAsync (objectId);
 		}
 	}
 }

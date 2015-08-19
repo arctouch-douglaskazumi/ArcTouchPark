@@ -47,6 +47,12 @@ namespace ArcTouchPark {
             }
         }
         
+        internal static string List {
+            get {
+                return ResourceManager.GetString("List", resourceCulture);
+            }
+        }
+        
         internal static string Logout {
             get {
                 return ResourceManager.GetString("Logout", resourceCulture);
@@ -74,6 +80,12 @@ namespace ArcTouchPark {
         internal static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        internal static string ListAbdicatorLabel {
+            get {
+                return ResourceManager.GetString("ListAbdicatorLabel", resourceCulture);
             }
         }
         
@@ -119,9 +131,21 @@ namespace ArcTouchPark {
             }
         }
         
+        internal static string ListReplacedByLabel {
+            get {
+                return ResourceManager.GetString("ListReplacedByLabel", resourceCulture);
+            }
+        }
+        
         internal static string WantToGetSpot {
             get {
                 return ResourceManager.GetString("WantToGetSpot", resourceCulture);
+            }
+        }
+        
+        internal static string ListDateLabel {
+            get {
+                return ResourceManager.GetString("ListDateLabel", resourceCulture);
             }
         }
         

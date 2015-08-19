@@ -64,4 +64,16 @@
 	<data name="YouGotTheSpot">
 		<value>You got the spot</value>
 	</data>	
+	<data name="List">
+		<value>Abdication List</value>
+	</data>	
+	<data name="ListAbdicatorLabel">
+		<value>Abdicator: </value>
+	</data>	
+	<data name="ListReplacedByLabel">
+		<value>Replaced by: </value>
+	</data>	
+	<data name="ListDateLabel">
+		<value>Date: </value>
+	</data>	
 </root>
