@@ -20,12 +20,22 @@
 		</OnPlatform>
 	</ContentPage.Padding>
 	<ContentPage.Content>
-		<StackLayout VerticalOptions="CenterAndExpand">
+	<Grid VerticalOptions="FillAndExpand"
+		HorizontalOptions="FillAndExpand">
+		<StackLayout
+			VerticalOptions="CenterAndExpand"
+			HorizontalOptions="FillAndExpand"
+             Padding="30" >
 			<Button 
-			Text="{x:Static ext:Strings.IWontUse}"
-			Command="{Binding WontUseCommand}"
-			/>
+				Text="{x:Static ext:Strings.IWontUse}"
+				Command="{Binding WontUseCommand}" />
 			<DatePicker Date="{Binding SelectedDate}" HeightRequest="50"/>
 		</StackLayout>
+		<ContentView BackgroundColor="Black" 
+			Opacity="0.5" 
+			IsVisible="{Binding IsRunning}" >
+			<ActivityIndicator IsRunning="true" />
+		</ContentView>
+	</Grid>
 	</ContentPage.Content>
 </ContentPage>

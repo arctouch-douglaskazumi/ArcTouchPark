@@ -3,6 +3,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ArcTouchPark
 {
@@ -19,12 +20,12 @@ namespace ArcTouchPark
 			}
 		}
 
-		protected async void Initialize ()
+		protected void Initialize ()
 		{
 			SelectedDate = DateTime.Now;
 			WontUseCommand = new Command (WontUse);
 			LogoutNotHereCommand = new Command (LogoutNotHere);
-			Username = await Api.GetLoggedUserAsync () ?? Localization.GetString ("Logout");
+			Username = Api.GetLoggedUser () ?? Strings.Logout;
 		}
 
 		#region Properties
@@ -67,14 +68,17 @@ namespace ArcTouchPark
 
 		private async void WontUse ()
 		{
-			string message = Localization.GetString ("SuccessfullAbdication");
+			string message = Strings.SuccessfullAbdication;
 			try {
 				Abdication abdication = new Abdication ();
 				abdication.Username = Username;
 				abdication.SelectedDate = SelectedDate;
+				IsRunning = true;
 				await ParseApi.SaveAsync (abdication);
 			} catch (Exception e) {
-				message = Localization.GetString ("OopsSomethingWrong");
+				message = Strings.OopsSomethingWrong;
+			} finally {
+				IsRunning = false;
 			}
 
 			await App.DisplayAlertAsync (message);
@@ -84,11 +88,46 @@ namespace ArcTouchPark
 
 		private async void LogoutNotHere ()
 		{
-			var wrongPlaceMessage = Localization.GetString ("LogoutNotHere");
+			var wrongPlaceMessage = Strings.LogoutNotHere;
 			await App.DisplayAlertAsync (wrongPlaceMessage);
 		}
 
 		#endregion
+
+		public async Task NotificationClicked (string objectId)
+		{
+			IsRunning = true;
+			try {
+				var abdication = await ParseApi.GetAsync<Abdication> (objectId);
+
+				var onlyInfo = !string.IsNullOrWhiteSpace (abdication.Username) && !string.IsNullOrWhiteSpace (abdication.ReplacedByUsername);
+				if (onlyInfo)
+					return;
+
+				var formattedMessage = string.Format (Strings.WantToGetSpot, abdication.Username, abdication.SelectedDate.ToString ("d"));
+				bool getSpot = await App.DisplayYesNoDialogAsync (formattedMessage);
+
+				if (getSpot) {
+					var loggedUser = Api.GetLoggedUser ();
+					string message = Strings.SpotAlreadyTaken;
+
+					if (string.IsNullOrWhiteSpace (abdication.ReplacedByUsername)) {
+						abdication.ReplacedByUsername = loggedUser;
+
+						await ParseApi.SaveAsync (abdication);
+
+						message = Strings.YouGotTheSpot;
+					}
+
+					await App.DisplayAlertAsync (message);
+				}
+			} catch (Exception ex) {
+				App.DisplayAlert (ex.Message);
+			} finally {
+				IsRunning = false;
+			}
+		}
+
 	}
 }
 

@@ -12,7 +12,7 @@ using Parse;
 
 namespace ArcTouchPark.Droid
 {
-	[Activity (Label = "arctouchpark.droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity (Label = "ArcTouch Park", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
 	{
 		protected override void OnCreate (Bundle bundle)
@@ -20,8 +20,13 @@ namespace ArcTouchPark.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
+			var app = new App ();
+			LoadApplication (app);
 
-			LoadApplication (new App ());
+			string objectId = Intent.GetStringExtra (Const.OBJECT_ID);
+			if (!string.IsNullOrWhiteSpace (objectId)) {
+				app.OnNotificationReceived (objectId);
+			}
 		}
 	}
 }

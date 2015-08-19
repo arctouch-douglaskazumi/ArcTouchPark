@@ -6,6 +6,21 @@ namespace ArcTouchPark
 {
 	public abstract class ViewModelBase : INotifyPropertyChanged
 	{
+		private bool isRunning;
+
+		public bool IsRunning {
+			get {
+				return this.isRunning;
+			}
+
+			set {
+				if (this.isRunning != value) {
+					this.isRunning = value;
+					RaisePropertyChanged ();
+				}
+			}
+		}
+
 		#region INotifyPropertyChanged implementation
 
 		public event PropertyChangedEventHandler PropertyChanged;

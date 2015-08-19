@@ -24,7 +24,7 @@ namespace ArcTouchPark
 		{
 			Type objectType = typeof(T);
 
-			var query = ParseObject.GetQuery (objectType.Name).WhereEqualTo ("objectId", objectId);
+			var query = ParseObject.GetQuery (objectType.Name).WhereEqualTo (Const.OBJECT_ID, objectId);
 			ParseObject parseObject = await query.FirstOrDefaultAsync ();
 			if (parseObject != null) {
 				var obj = (T)Activator.CreateInstance (objectType);

@@ -8,7 +8,7 @@
 	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 	<permission android:protectionLevel="signature" android:name="com.arctouch.park.permission.C2D_MESSAGE" />
 	<uses-permission android:name="com.arctouch.park.permission.C2D_MESSAGE" />
-	<application android:label="arctouchpark.droid" android:name="arctouchpark.droid.ParseApplication" android:icon="@drawable/icon">
+	<application android:label="ArcTouch Park" android:name="arctouchpark.droid.ParseApplication" android:icon="@drawable/icon">
 		<service android:name="parse.ParsePushService" />
 		<receiver android:name="parse.ParsePushBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
 			<intent-filter>

@@ -46,4 +46,22 @@
 	<data name="OopsSomethingWrong">
 		<value>Oops something wrong happened.</value>
 	</data>	
+	<data name="Yes">
+		<value>Yes</value>
+	</data>	
+	<data name="No">
+		<value>No</value>
+	</data>	
+	<data name="HurryUp">
+		<value>Hurry up!</value>
+	</data>	
+	<data name="WantToGetSpot">
+		<value>Do you want to get {0}'s spot for {1}?</value>
+	</data>	
+	<data name="SpotAlreadyTaken">
+		<value>Spot already taken</value>
+	</data>	
+	<data name="YouGotTheSpot">
+		<value>You got the spot</value>
+	</data>	
 </root>

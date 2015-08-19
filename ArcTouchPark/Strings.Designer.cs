@@ -47,42 +47,6 @@ namespace ArcTouchPark {
             }
         }
         
-        internal static string LoginPlaceholder {
-            get {
-                return ResourceManager.GetString("LoginPlaceholder", resourceCulture);
-            }
-        }
-        
-        internal static string IWontUse {
-            get {
-                return ResourceManager.GetString("IWontUse", resourceCulture);
-            }
-        }
-        
-        internal static string LogoutNotHere {
-            get {
-                return ResourceManager.GetString("LogoutNotHere", resourceCulture);
-            }
-        }
-        
-        internal static string OopsSomethingWrong {
-            get {
-                return ResourceManager.GetString("OopsSomethingWrong", resourceCulture);
-            }
-        }
-        
-        internal static string OK {
-            get {
-                return ResourceManager.GetString("OK", resourceCulture);
-            }
-        }
-        
-        internal static string AppName {
-            get {
-                return ResourceManager.GetString("AppName", resourceCulture);
-            }
-        }
-        
         internal static string Logout {
             get {
                 return ResourceManager.GetString("Logout", resourceCulture);
@@ -95,9 +59,15 @@ namespace ArcTouchPark {
             }
         }
         
-        internal static string SuccessfullAbdication {
+        internal static string OopsSomethingWrong {
             get {
-                return ResourceManager.GetString("SuccessfullAbdication", resourceCulture);
+                return ResourceManager.GetString("OopsSomethingWrong", resourceCulture);
+            }
+        }
+        
+        internal static string YouGotTheSpot {
+            get {
+                return ResourceManager.GetString("YouGotTheSpot", resourceCulture);
             }
         }
         
@@ -107,9 +77,75 @@ namespace ArcTouchPark {
             }
         }
         
+        internal static string LoginPlaceholder {
+            get {
+                return ResourceManager.GetString("LoginPlaceholder", resourceCulture);
+            }
+        }
+        
+        internal static string SuccessfullAbdication {
+            get {
+                return ResourceManager.GetString("SuccessfullAbdication", resourceCulture);
+            }
+        }
+        
+        internal static string AppName {
+            get {
+                return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        internal static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        internal static string LogoutNotHere {
+            get {
+                return ResourceManager.GetString("LogoutNotHere", resourceCulture);
+            }
+        }
+        
+        internal static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        internal static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
+            }
+        }
+        
+        internal static string WantToGetSpot {
+            get {
+                return ResourceManager.GetString("WantToGetSpot", resourceCulture);
+            }
+        }
+        
         internal static string WontUse {
             get {
                 return ResourceManager.GetString("WontUse", resourceCulture);
+            }
+        }
+        
+        internal static string HurryUp {
+            get {
+                return ResourceManager.GetString("HurryUp", resourceCulture);
+            }
+        }
+        
+        internal static string IWontUse {
+            get {
+                return ResourceManager.GetString("IWontUse", resourceCulture);
+            }
+        }
+        
+        internal static string SpotAlreadyTaken {
+            get {
+                return ResourceManager.GetString("SpotAlreadyTaken", resourceCulture);
             }
         }
     }

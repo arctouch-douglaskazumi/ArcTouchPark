@@ -24,7 +24,7 @@ namespace ArcTouchPark
 		public SideMenuPage ()
 		{
 			BackgroundColor = BACKGROUND_COLOR;
-			Title = Localization.GetString ("AppName");
+			Title = Localization.GetString (Const.APP_NAME);
 
 			CreateLayout ();
 		}
@@ -80,7 +80,7 @@ namespace ArcTouchPark
 				HorizontalOptions = LayoutOptions.Fill,
 				XAlign = TextAlignment.Center,
 				YAlign = TextAlignment.Center,
-				Text = Localization.GetString ("AppName"),
+				Text = Localization.GetString (Const.APP_NAME),
 				FontFamily = VisualDesign.FONT_FAMILY_MEDIUM,
 				FontSize = VisualDesign.ScaleFontSize (HEADING_LABEL_FONT_SIZE)
 			};

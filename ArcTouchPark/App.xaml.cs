@@ -46,6 +46,16 @@ namespace ArcTouchPark
 			await Application.Current.MainPage.DisplayAlert (title ?? Strings.AppName, message, Strings.OK);
 		}
 
+		public static async Task<bool> DisplayYesNoDialogAsync (string message, string title = null)
+		{
+			return await DisplayBinaryDialogAsync (message, title, Strings.Yes, Strings.No);
+		}
+
+		public static async Task<bool> DisplayBinaryDialogAsync (string message, string title = null, params string[] options)
+		{
+			return await Application.Current.MainPage.DisplayAlert (title ?? Strings.AppName, message, options [0], options [1]);
+		}
+
 		public event EventHandler<SideMenuItem> SideMenuItemChanged;
 
 		public void OnSideMenuItemChanged (SideMenuItem sideMenuItem)
@@ -53,6 +63,16 @@ namespace ArcTouchPark
 			EventHandler<SideMenuItem> handler = SideMenuItemChanged;
 			if (handler != null) {
 				handler (this, sideMenuItem);
+			}
+		}
+
+		public event EventHandler<string> NotificationReceived;
+
+		public async void OnNotificationReceived (string objectId)
+		{
+			EventHandler<string> handler = NotificationReceived;
+			if (handler != null) {
+				handler (this, objectId);
 			}
 		}
 

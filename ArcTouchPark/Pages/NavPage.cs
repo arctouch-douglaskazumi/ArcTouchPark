@@ -76,13 +76,13 @@ namespace ArcTouchPark
 			return (this.navPage.CurrentPage != null) && (this.navPage.CurrentPage.GetType () == page.GetType ());
 		}
 
-		protected override async void OnAppearing ()
+		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
 
 			this.sideMenuPage.ItemTapped += SideMenuItemTapped;
 
-			await CheckForAuthAsync ();
+			CheckForAuth ();
 		}
 
 		protected override void OnDisappearing ()
@@ -123,9 +123,9 @@ namespace ArcTouchPark
 
 		#endregion
 
-		public async Task CheckForAuthAsync ()
+		public void CheckForAuth ()
 		{
-			bool isLoggedIn = await Api.IsLoggedInAsync ();
+			bool isLoggedIn = Api.IsLoggedIn ();
 			if (!isLoggedIn) {
 				ShowLoginPage ();
 			}

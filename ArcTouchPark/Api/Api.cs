@@ -23,14 +23,14 @@ namespace ArcTouchPark
 			Preferences.SetString (LOGIN_USERNAME, string.Empty);
 		}
 
-		public static async Task<string> GetLoggedUserAsync ()
+		public static string GetLoggedUser ()
 		{
 			return Preferences.GetString (LOGIN_USERNAME);
 		}
 
-		public static async Task<bool> IsLoggedInAsync ()
+		public static bool IsLoggedIn ()
 		{
-			string loggedUser = await GetLoggedUserAsync ();
+			string loggedUser = GetLoggedUser ();
 			return loggedUser != string.Empty;
 		}
 	}
