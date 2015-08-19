@@ -76,7 +76,7 @@ namespace ArcTouchPark
 				IsRunning = true;
 				await ParseApi.SaveAsync (abdication);
 			} catch (Exception e) {
-				message = Strings.OopsSomethingWrong;
+				message = Strings.OopsSomethingWrong + " - " + e.Message;
 			} finally {
 				IsRunning = false;
 			}

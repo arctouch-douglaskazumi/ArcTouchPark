@@ -68,7 +68,7 @@ namespace ArcTouchPark
 
 		public event EventHandler<string> NotificationReceived;
 
-		public async void OnNotificationReceived (string objectId)
+		public void OnNotificationReceived (string objectId)
 		{
 			EventHandler<string> handler = NotificationReceived;
 			if (handler != null) {

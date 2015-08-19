@@ -9,6 +9,7 @@ namespace ArcTouchPark
 
 		public static string OBJECT_ID = "objectId";
 		public static string APP_NAME = "AppName";
+		public static string LOGIN_USERNAME = "Login";
 
 	}
 }
