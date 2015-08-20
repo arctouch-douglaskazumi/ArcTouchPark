@@ -12,7 +12,12 @@ using Parse;
 
 namespace ArcTouchPark.Droid
 {
-	[Activity (Label = "ArcTouch Park", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity (
+		Label = "ArcTouch Park", 
+		Icon = "@drawable/icon", 
+		MainLauncher = true, 
+		ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
+		Theme = "@style/NoIcon")]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
 	{
 		protected override void OnCreate (Bundle bundle)

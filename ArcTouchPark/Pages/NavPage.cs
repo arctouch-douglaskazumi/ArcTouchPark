@@ -16,60 +16,39 @@ namespace ArcTouchPark
 			}
 		}
 
+		private Localization Localization {
+			get {
+				return ((App)(App.Current)).Localization;
+			}
+		}
+
+		private NavigationPage StyledNavigationPage (Page newPage)
+		{
+			return new NavigationPage (newPage) {
+				BarBackgroundColor = VisualDesign.BACKGROUND_COLOR,
+				BarTextColor = VisualDesign.BRAND_COLOR,
+				BackgroundColor = VisualDesign.BACKGROUND_COLOR
+			};
+		}
+
 		public NavPage ()
 		{
-			MasterBehavior = MasterBehavior.Default;
+			MasterBehavior = MasterBehavior.Popover;
 
 			this.sideMenuPage = new SideMenuPage ();
-			this.navPage = new NavigationPage (new MainPage ()) {
-				BarBackgroundColor = VisualDesign.BACKGROUND_COLOR,
-				BarTextColor = VisualDesign.BRAND_COLOR
-			};
+			this.sideMenuPage.Icon = "menu.png";
 
 			Master = sideMenuPage;
+
+			var homePage = new MainPage ();
+			homePage.Title = Localization.GetString (LocalizationKeyAttribute.GetLocalizationKey (SideMenuItem.Home));
+			this.navPage = StyledNavigationPage (homePage);
+
 			Detail = navPage;
 
 		}
 
 		#region Navigation
-
-		public Task PushPageAsync (Page page)
-		{
-			return this.navPage.PushAsync (page);
-		}
-
-		public Task<Page> PopPageAsync ()
-		{
-			return this.navPage.PopAsync ();
-		}
-
-		public Task PopToRootAsync (bool animate = true)
-		{
-			return this.navPage.PopToRootAsync (animate);
-		}
-
-		public async Task NavigateToPage (SideMenuItem sideMenuItem)
-		{
-			IsPresented = false;
-
-			switch (sideMenuItem) {
-			// FIXIT: Enable again when Dashboard is created
-			//case SideMenuItem.Home:
-			//    await PopToRootAsync(false);
-			//    break;
-			default:
-				Page page = PageAttribute.GetPage (sideMenuItem);
-				if (!IsSameAsCurrentPage (page)) {
-					await PopToRootAsync (false);
-					await PushPageAsync (page);
-				}
-				break;
-			}
-
-			App.OnSideMenuItemChanged (sideMenuItem);
-
-			this.sideMenuPage.ForceLayout ();
-		}
 
 		private bool IsSameAsCurrentPage (Page page)
 		{
@@ -100,24 +79,20 @@ namespace ArcTouchPark
 		private async void SideMenuItemTapped (object sender, SideMenuItem sideMenuItem)
 		{
 			IsPresented = false;
-			Task popTask = PopToRootAsync ();
-			Task pushTask = null;
+
 			switch (sideMenuItem) {
-			case SideMenuItem.Home:
-				// Root is already HomePage
-				break;
 			case SideMenuItem.Logout:
 				await LogOut ();
 				break;
 			default:
-				pushTask = PushPageAsync (PageAttribute.GetPage (sideMenuItem));
-				break;
-			}
+				var newPage = PageAttribute.GetPage (sideMenuItem);
+				if (!IsSameAsCurrentPage (newPage)) {
+					newPage.Title = Localization.GetString (LocalizationKeyAttribute.GetLocalizationKey (sideMenuItem));
+					navPage = StyledNavigationPage (newPage);
 
-			if (pushTask != null) {
-				await Task.WhenAll (popTask, pushTask);
-			} else {
-				await popTask;
+					Detail = navPage;
+				}
+				break;
 			}
 		}
 

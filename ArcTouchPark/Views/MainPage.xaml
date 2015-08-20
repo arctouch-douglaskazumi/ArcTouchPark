@@ -3,7 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	x:Class="ArcTouchPark.MainPage"
 	xmlns:ext="clr-namespace:ArcTouchPark;assembly=ArcTouchPark"
-	>
+	BackgroundColor="{x:Static ext:VisualDesign.BACKGROUND_COLOR}" >
 	<ContentPage.ToolbarItems>
 		<ToolbarItem 
 			Text="{Binding Username}"

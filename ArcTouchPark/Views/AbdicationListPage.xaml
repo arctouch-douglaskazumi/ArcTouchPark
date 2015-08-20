@@ -1,22 +1,47 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ArcTouchPark.AbdicationListPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:ext="clr-namespace:ArcTouchPark;assembly=ArcTouchPark"
+	BackgroundColor="{x:Static ext:VisualDesign.BACKGROUND_COLOR}"
+	x:Class="ArcTouchPark.AbdicationListPage">
 	<Grid VerticalOptions="FillAndExpand"
 		HorizontalOptions="FillAndExpand">
 		<ListView x:Name="AbdicationListView" ItemsSource="{Binding AbdicationList}"
 			GroupDisplayBinding="{Binding GroupName}"
-			GroupShortNameBinding = "{Binding GroupName}"
-			IsGroupingEnabled = "true" >
+			IsGroupingEnabled = "true" 
+			RowHeight="{x:Static ext:Const.ROW_HEIGHT}"
+			HasUnevenRows="true">
+			<ListView.GroupHeaderTemplate>
+				<DataTemplate>
+					<ViewCell Height="{x:Static ext:Const.GROUP_ROW_HEIGHT}">
+						<StackLayout BackgroundColor="{x:Static ext:VisualDesign.BRAND_COLOR}">
+							<Label Text="{Binding GroupName}" 
+								TextColor="White"
+								VerticalOptions="CenterAndExpand"
+								HorizontalOptions="CenterAndExpand"/>
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.GroupHeaderTemplate>
 			<ListView.ItemTemplate>
 			  <DataTemplate>
-			    <TextCell Text="{Binding Username}" 
-			    	Detail="{Binding ReplacedByUsername}" />
+				  <ViewCell>
+					  <StackLayout Padding="10" 
+					  	VerticalOptions="FillAndExpand"
+					  	BackgroundColor="{x:Static ext:VisualDesign.BACKGROUND_COLOR}" >
+					    <Label Text="{Binding Username}"
+					    	TextColor="{x:Static ext:VisualDesign.BRAND_COLOR}" />
+					    <Label Text="{Binding ReplacedByUsername}"
+					    	TextColor="White" />
+					  </StackLayout>
+				  </ViewCell>
 			  </DataTemplate>
 			</ListView.ItemTemplate>
 		</ListView>
 		<ContentView BackgroundColor="Black" 
 			Opacity="0.5" 
 			IsVisible="{Binding IsRunning}" >
-			<ActivityIndicator IsRunning="true" />
+			<ActivityIndicator IsRunning="true"  />
 		</ContentView>
 	</Grid>
 </ContentPage>

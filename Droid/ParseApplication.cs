@@ -37,7 +37,7 @@ namespace ArcTouchPark.Droid
 			object alertMessage;
 			if (payload.TryGetValue (Const.OBJECT_ID, out objectId)) {
 				if (payload.TryGetValue ("alert", out alertMessage)) {
-					generateNotification (alertMessage.ToString (), objectId.ToString ());
+					generateNotification (alertMessage.ToString (), (string)objectId);
 				}
 			}
 		}

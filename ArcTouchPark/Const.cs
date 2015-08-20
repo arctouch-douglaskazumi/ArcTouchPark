@@ -12,6 +12,8 @@ namespace ArcTouchPark
 		public static string APP_NAME = "AppName";
 		public static string LOGIN_USERNAME = "Login";
 		public static string SELECTED_DATE = "SelectedDate";
+		public static string ROW_HEIGHT = "65";
+		public static string GROUP_ROW_HEIGHT = "30";
 
 	}
 }

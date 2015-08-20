@@ -71,14 +71,14 @@ namespace ArcTouchPark.iOS
 
 		public override void DidReceiveRemoteNotification (UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
 		{
-			if (application.ApplicationState == UIApplicationState.Active) {
-				var message = (userInfo.ObjectForKey (new NSString ("aps")) as NSDictionary) ["alert"].ToString ();
-				if (!string.IsNullOrWhiteSpace (message)) {
-					App.DisplayAlertAsync (message);
-				}				
-			} else {
+			var message = (userInfo.ObjectForKey (new NSString ("aps")) as NSDictionary) ["alert"].ToString ();
+			if (application.ApplicationState != UIApplicationState.Active || message.Contains ("parking spot")) { //TODO needs a better way to identify pushes that need reply
 				var objectId = userInfo [Const.OBJECT_ID].ToString ();
 				parkApp.OnNotificationReceived (objectId);
+			} else {
+				if (!string.IsNullOrWhiteSpace (message)) {
+					App.DisplayAlertAsync (message);
+				}	
 			}
 		}
 	}

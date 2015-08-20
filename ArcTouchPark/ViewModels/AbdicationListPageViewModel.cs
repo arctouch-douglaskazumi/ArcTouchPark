@@ -51,31 +51,44 @@ namespace ArcTouchPark
 
 		private async Task RefreshAsync ()
 		{
-			var abList = await ParseApi.GetAllAsync<Abdication> ();
-			var grouped = abList
-				.OrderByDescending (ab => ab.SelectedDate)
-				.GroupBy (ab => ab.SelectedDate.ToString (Const.DATE_FORMAT))
-				.Select (g => new GroupedAbdicationList (
-				              Strings.ListDateLabel + g.Key,
-				              g.Select (groupedAbd => new Abdication {
-					objectId = groupedAbd.objectId,
-					SelectedDate = groupedAbd.SelectedDate,
-					Username = Strings.ListAbdicatorLabel + groupedAbd.Username,
-					ReplacedByUsername = Strings.ListReplacedByLabel + groupedAbd.ReplacedByUsername
-				})
-			              ));
-			AbdicationList = new ObservableCollection<GroupedAbdicationList> (grouped);
+			IsRunning = true;
+			try {
+				var abList = await ParseApi.GetAllAsync<Abdication> ();
+				var grouped = abList
+					.OrderByDescending (ab => ab.SelectedDate)
+					.GroupBy (ab => ab.SelectedDate.ToString (Const.DATE_FORMAT))
+					.Select (g => new GroupedAbdicationList (
+					              Strings.ListDateLabel + g.Key,
+					              g.Select (groupedAbd => new Abdication {
+						objectId = groupedAbd.objectId,
+						SelectedDate = groupedAbd.SelectedDate,
+						Username = Strings.ListAbdicatorLabel + groupedAbd.Username,
+						ReplacedByUsername = Strings.ListReplacedByLabel + groupedAbd.ReplacedByUsername
+					})
+				              ));
+				AbdicationList = new ObservableCollection<GroupedAbdicationList> (grouped);
+			} finally {
+				IsRunning = false;
+			}
 		}
 
 		public async void GetSpot (object sender, ItemTappedEventArgs itemTappedEventArgs)
 		{
-			var objectId = ((Abdication)itemTappedEventArgs.Item).objectId;
-				
-			MainPageViewModel mPVM = new MainPageViewModel ();
-			IsRunning = true;
-			await mPVM.NotificationClickedAsync (objectId);
-			await RefreshAsync ();
-			IsRunning = false;
+			var abdication = (Abdication)itemTappedEventArgs.Item;
+			var replaceByWithoutLabel = abdication.ReplacedByUsername.Replace (Strings.ListReplacedByLabel, string.Empty);
+			if (!string.IsNullOrWhiteSpace (replaceByWithoutLabel)) {
+				await App.DisplayAlertAsync (Strings.SpotAlreadyTaken);
+				return;
+			}
+
+			try {
+				MainPageViewModel mPVM = new MainPageViewModel ();
+				IsRunning = true;
+				await mPVM.NotificationClickedAsync (abdication.objectId);
+				await RefreshAsync ();
+			} finally {
+				IsRunning = false;
+			}
 		}
 	}
 }
