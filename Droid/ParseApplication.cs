@@ -10,6 +10,8 @@ namespace ArcTouchPark.Droid
 	[Application (Name = "arctouchpark.droid.ParseApplication")]
 	public class ParseApplication: Application
 	{
+		private static int notificationId = 0;
+
 		public ParseApplication (IntPtr handle, JniHandleOwnership ownerShip)
 			: base (handle, ownerShip)
 		{
@@ -47,8 +49,7 @@ namespace ArcTouchPark.Droid
 			Intent intent = new Intent (this, typeof(MainActivity));
 			intent.PutExtra (Const.OBJECT_ID, objectId);
 
-			const int pendingIntentId = 0;
-			PendingIntent pendingIntent = PendingIntent.GetActivity (this, pendingIntentId, intent, PendingIntentFlags.OneShot);
+			PendingIntent pendingIntent = PendingIntent.GetActivity (this, notificationId++, intent, PendingIntentFlags.OneShot);
 
 			Notification.Builder builder = new Notification.Builder (this)
 				.SetContentIntent (pendingIntent)
@@ -65,7 +66,6 @@ namespace ArcTouchPark.Droid
 
 			NotificationManager notificationManager = GetSystemService (Context.NotificationService) as NotificationManager;
 
-			const int notificationId = 0;
 			notificationManager.Notify (notificationId, notification);
 		}
 

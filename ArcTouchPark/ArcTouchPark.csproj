@@ -72,8 +72,8 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Parse.iOS">
-      <HintPath>..\Components\parse-1.5.4\lib\ios-unified\Parse.iOS.dll</HintPath>
+    <Reference Include="Parse.Android">
+      <HintPath>..\Components\parse-1.5.4\lib\android\Parse.Android.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
