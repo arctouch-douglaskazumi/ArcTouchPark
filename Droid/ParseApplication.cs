@@ -38,7 +38,7 @@ namespace ArcTouchPark.Droid
 			object objectId;
 			object alertMessage;
 			if (payload.TryGetValue (Const.OBJECT_ID, out objectId)) {
-				if (payload.TryGetValue ("alert", out alertMessage)) {
+				if (payload.TryGetValue (Const.ALERT_DICT_KEY, out alertMessage)) {
 					generateNotification (alertMessage.ToString (), (string)objectId);
 				}
 			}
@@ -59,7 +59,7 @@ namespace ArcTouchPark.Droid
 
 			Notification.BigTextStyle longText = new Notification.BigTextStyle (builder);
 			longText.BigText (message);
-			longText.SetSummaryText ("HurryUp");
+			longText.SetSummaryText (GetString ("HurryUp"));
 
 			Notification notification = builder.Build ();
 			notification.Flags = NotificationFlags.AutoCancel;

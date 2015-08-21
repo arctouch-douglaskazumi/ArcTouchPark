@@ -76,4 +76,7 @@
 	<data name="ListDateLabel">
 		<value>Date: </value>
 	</data>	
+	<data name="MessagePartToIdentifyOpenSpot">
+		<value>parking spot</value>
+	</data>	
 </root>

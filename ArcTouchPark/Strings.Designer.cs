@@ -161,6 +161,12 @@ namespace ArcTouchPark {
             }
         }
         
+        internal static string MessagePartToIdentifyOpenSpot {
+            get {
+                return ResourceManager.GetString("MessagePartToIdentifyOpenSpot", resourceCulture);
+            }
+        }
+        
         internal static string IWontUse {
             get {
                 return ResourceManager.GetString("IWontUse", resourceCulture);

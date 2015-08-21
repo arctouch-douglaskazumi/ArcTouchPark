@@ -9,6 +9,8 @@ namespace ArcTouchPark
 		public static string DATE_FORMAT = "d";
 
 		public static string OBJECT_ID = "objectId";
+		public static string ALERT_DICT_KEY = "alert";
+		public static string APS_DICT_KEY = "aps";
 		public static string APP_NAME = "AppName";
 		public static string LOGIN_USERNAME = "Login";
 		public static string SELECTED_DATE = "SelectedDate";
